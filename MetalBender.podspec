@@ -11,4 +11,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.ios.source_files = 'Sources/**/*.{swift,metal}'
   s.dependency 'SwiftProtobuf', '0.9.903'
+  s.preserve_paths = 'Bender.framework/*'
+  s.resources = 'Bender.framework/*.metallib'
 end

@@ -126,6 +126,7 @@ public extension TFConverter {
 
         //MARK: InstanceNorm
         let inormMapper = { (node: TFNode) -> NetworkLayer in
+            // node.incomingNodes().first(where: { ($0 as! TFNode).nodeDef.name == "\(node.nodeDef.name)/axis" } )
             guard let incoming = node.incomingNodes()  as? [TFNode],
                 let shiftVar = incoming.first(where: { $0.nodeDef.isTFVariableOrConstOp }),
                 let mul = incoming.first(where: { $0.nodeDef.isTFInstanceNormMulOp }),

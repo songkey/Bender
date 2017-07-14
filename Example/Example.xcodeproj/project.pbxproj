@@ -25,10 +25,10 @@
 		8F46BCB41EE0B52D00DF275A /* mnist-fc2_w in Resources */ = {isa = PBXBuildFile; fileRef = 8F46BCAC1EE0B52D00DF275A /* mnist-fc2_w */; };
 		8F79B80F1EC25ECA002D02C8 /* Luminance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79B80E1EC25ECA002D02C8 /* Luminance.swift */; };
 		8F79B8111EC261D6002D02C8 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8F79B8101EC261D6002D02C8 /* Shaders.metal */; };
+		8F9900851F19496E000C6E03 /* Bender.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9CAB221D89C756006E1824 /* Bender.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F9900881F194D61000C6E03 /* Bender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9900811F194952000C6E03 /* Bender.framework */; };
 		8F9F358E1EDCC5FE005F4DAE /* InstanceNormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9F358D1EDCC5FE005F4DAE /* InstanceNormTests.swift */; };
 		8FA6BAB91ED5AB2D004450C0 /* RandomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA6BAB81ED5AB2D004450C0 /* RandomLoader.swift */; };
-		8FA8E3251EC0BE7300E8BAD8 /* Bender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9CAB221D89C756006E1824 /* Bender.framework */; };
-		8FA8E3261EC0BE7300E8BAD8 /* Bender.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9CAB221D89C756006E1824 /* Bender.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FAD35061ED48825004B69DA /* tftest.pbtxt in Resources */ = {isa = PBXBuildFile; fileRef = 8FAD35051ED48825004B69DA /* tftest.pbtxt */; };
 		8FCD3E991ED8A88200B1AAE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD3E981ED8A88200B1AAE6 /* ViewController.swift */; };
 		8FCD3E9F1ED8B5DF00B1AAE6 /* g_and_w2.pb in Resources */ = {isa = PBXBuildFile; fileRef = 8FCD3E9E1ED8B5DF00B1AAE6 /* g_and_w2.pb */; };
@@ -58,18 +58,18 @@
 			remoteGlobalIDString = 28F828CB1C4B714D00330CF4;
 			remoteInfo = Example;
 		};
+		8F9900861F19496E000C6E03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287D0A741C4B7B26004566D6 /* Bender.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 28F8287C1C494B2C00330CF4;
+			remoteInfo = Bender;
+		};
 		8F9CAB211D89C756006E1824 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 287D0A741C4B7B26004566D6 /* Bender.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 28F8287D1C494B2C00330CF4;
-			remoteInfo = Bender;
-		};
-		8FA8E3271EC0BE7300E8BAD8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 287D0A741C4B7B26004566D6 /* Bender.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 28F8287C1C494B2C00330CF4;
 			remoteInfo = Bender;
 		};
 /* End PBXContainerItemProxy section */
@@ -81,7 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8FA8E3261EC0BE7300E8BAD8 /* Bender.framework in Embed Frameworks */,
+				8F9900851F19496E000C6E03 /* Bender.framework in Embed Frameworks */,
 				8FCD3EA81ED8BE1F00B1AAE6 /* SwiftProtobuf.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -113,6 +113,7 @@
 		8F46BCAC1EE0B52D00DF275A /* mnist-fc2_w */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mnist-fc2_w"; path = "mnist/mnist-fc2_w"; sourceTree = "<group>"; };
 		8F79B80E1EC25ECA002D02C8 /* Luminance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Luminance.swift; path = Example/Luminance.swift; sourceTree = "<group>"; };
 		8F79B8101EC261D6002D02C8 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Shaders.metal; path = Example/Shaders.metal; sourceTree = "<group>"; };
+		8F9900811F194952000C6E03 /* Bender.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bender.framework; path = ../Bender.framework; sourceTree = "<group>"; };
 		8F9F358D1EDCC5FE005F4DAE /* InstanceNormTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceNormTests.swift; path = Example/Tests/InstanceNormTests.swift; sourceTree = "<group>"; };
 		8FA6BAB81ED5AB2D004450C0 /* RandomLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomLoader.swift; sourceTree = "<group>"; };
 		8FAD35051ED48825004B69DA /* tftest.pbtxt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tftest.pbtxt; sourceTree = "<group>"; };
@@ -140,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA8E3251EC0BE7300E8BAD8 /* Bender.framework in Frameworks */,
+				8F9900881F194D61000C6E03 /* Bender.framework in Frameworks */,
 				8FCD3EA71ED8BE1F00B1AAE6 /* SwiftProtobuf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +273,7 @@
 		8FCD3E9D1ED8AC8200B1AAE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F9900811F194952000C6E03 /* Bender.framework */,
 				8FCD3EA61ED8BE1F00B1AAE6 /* SwiftProtobuf.framework */,
 			);
 			name = Frameworks;
@@ -316,7 +318,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8FA8E3281EC0BE7300E8BAD8 /* PBXTargetDependency */,
+				8F9900871F19496E000C6E03 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -475,10 +477,10 @@
 			target = 28F828CB1C4B714D00330CF4 /* Example */;
 			targetProxy = 28F828E11C4B714D00330CF4 /* PBXContainerItemProxy */;
 		};
-		8FA8E3281EC0BE7300E8BAD8 /* PBXTargetDependency */ = {
+		8F9900871F19496E000C6E03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Bender;
-			targetProxy = 8FA8E3271EC0BE7300E8BAD8 /* PBXContainerItemProxy */;
+			targetProxy = 8F9900861F19496E000C6E03 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
