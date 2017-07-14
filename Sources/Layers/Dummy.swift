@@ -6,7 +6,9 @@
 //
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// Dummy layers are helpers for certain situations and are removed before execution starts.
 open class Dummy: NetworkLayer {

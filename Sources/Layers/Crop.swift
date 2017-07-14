@@ -6,7 +6,9 @@
 //  Copyright © 2017 Xmartlabs. All rights reserved.
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// This layer crops the input image to the desired size. The cropRect is taken from the center of the input image.
 open class Crop: NetworkLayer {

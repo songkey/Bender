@@ -6,7 +6,9 @@
 //
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// This layer is used as the starting point for any network. If the inputImage does not have the requested size then it will be resized.
 public class Start: NetworkLayer {

@@ -6,7 +6,9 @@
 //
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// Implements the different activation neurons like ReLu, Tanh, Sigmoid, Linear
 open class Neuron: NetworkLayer {

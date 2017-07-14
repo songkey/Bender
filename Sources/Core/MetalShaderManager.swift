@@ -6,7 +6,9 @@
 //
 //
 
-import Metal
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import Metal
+#endif
 
 /// Manages the references to the different Metal compute kernels
 public class MetalShaderManager {

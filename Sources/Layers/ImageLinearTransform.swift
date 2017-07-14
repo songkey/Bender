@@ -6,7 +6,9 @@
 //
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// Performs a scaling and clamps the output values to between 0 and 1
 open class ImageLinearTransform: NetworkLayer {

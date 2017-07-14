@@ -6,7 +6,9 @@
 //
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// Implements Local Response Normalization (LRN).
 open class LocalResponseNorm: NetworkLayer {

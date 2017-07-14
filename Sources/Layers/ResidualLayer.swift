@@ -6,7 +6,9 @@
 //  Copyright © 2017 Xmartlabs. All rights reserved.
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /** Generic Residual layer. This is a composite layer.
  */

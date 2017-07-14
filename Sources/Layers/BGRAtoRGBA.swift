@@ -6,7 +6,9 @@
 //
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// Transforms an image from RGBA to BGRA. (You can use it the other way around too)
 open class BGRAtoRGBA: NetworkLayer {

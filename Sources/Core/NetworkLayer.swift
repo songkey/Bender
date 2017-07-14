@@ -7,7 +7,9 @@
 //
 
 import AVFoundation
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// A group is a temporary structure that represents every network component
 public protocol Group {

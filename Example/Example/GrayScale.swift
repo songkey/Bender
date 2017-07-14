@@ -6,7 +6,9 @@
 //
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 import Bender
 
 /// Receives two input images. The first is used to take the color and the second is used to take the luminance for the output image.

@@ -9,7 +9,9 @@
 import Accelerate
 import AVFoundation
 import MetalKit
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 import Bender
 
 public class Texture {

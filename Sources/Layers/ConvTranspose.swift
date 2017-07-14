@@ -6,7 +6,9 @@
 //  Copyright © 2017 Xmartlabs. All rights reserved.
 //
 
-import MetalPerformanceShaders
+#if !((arch(i386) || arch(x86_64)) && os(iOS))
+    import MetalPerformanceShaders
+#endif
 
 /// Transpose 2D Convolution (conv2d_transpose in TF). Not Deconvolution.
 /// Three-step implementation: See more info about this in conv_transpose.metal
