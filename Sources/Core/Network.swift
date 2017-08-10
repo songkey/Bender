@@ -26,18 +26,35 @@ public class Network {
     fileprivate var device: MTLDevice
 
     /// - Parameters:
-    ///   - device: the MTLDevice.
     ///   - inputSize: The image size for the first layer. Input images will be resized if they do not have this size.
     ///   - parameterLoader: The parameter loader responsible for loading the weights and biases for this network.
-    public init(device: MTLDevice, inputSize: LayerSize, parameterLoader: ParameterLoader?) {
+    public init(inputSize: LayerSize, parameterLoader: ParameterLoader? = nil) {
+        guard let device = MTLCreateSystemDefaultDevice() else {
+            fatalError("Couldn't create default device")
+        }
+        guard MPSSupportsMTLDevice(device) else {
+            fatalError("Metal Performance Shaders does not support this device \(device.description)")
+        }
+
         start = Start(size: inputSize)
         self.device = device
         self.parameterLoader = parameterLoader ?? NoParameterLoader()
     }
 
     /// Converts the graph found at `url` to its nodes
-    public func convert(converter: Converter, url: URL, type: ProtoFileType) {
-        nodes = converter.convertGraph(file: url, type: type)
+    static public func load(
+        from url: URL,
+        using converter: Converter = TFConverter.default(),
+        inputSize: LayerSize,
+        parameterLoader: ParameterLoader? = nil,
+        performInitialize: Bool = true) -> Network {
+
+        let network = Network(inputSize: inputSize, parameterLoader: parameterLoader)
+        network.nodes = converter.convertGraph(file: url)
+        if performInitialize {
+            network.initialize()
+        }
+        return network
     }
 
     /// Initializes the layers of the network
